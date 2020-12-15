@@ -18,7 +18,7 @@
 
     <td class="align-middle">{{emp.id}}</td>
     <td class="align-middle">{{emp.name}}</td>
-    <td class="align-middle">{{emp.vacationDays}}</td>
+    <td class="align-middle">{{emp.vacationDays| number:'0.2-2' }}</td>
     <td class="align-middle">{{emp.workDays}}</td>
 
     <td class="align-middle"><button type="button" class="btn btn-info" routerLink="/emp/{{emp.id}}/work">Set workdays</button>
