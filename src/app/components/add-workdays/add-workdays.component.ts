@@ -57,8 +57,9 @@ export class AddWorkdaysComponent implements OnInit {
       }, e => {
       }); }
     } else {
+
       if ( this.rq.days < 0 || this.rq.days > this.vday){
-        window.alert('Please enter a number between 0(exclude) and ' + this.vday + '. you do not have enough vacation days left);
+        window.alert('Please enter a number between 0(exclude) and ' + this.vday + '. you do not have enough vacation days left');
       }
       else {
       this.empService.takeVacation(this.rq, this.empId).subscribe(data => {
