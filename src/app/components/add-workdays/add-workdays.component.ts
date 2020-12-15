@@ -48,6 +48,7 @@ export class AddWorkdaysComponent implements OnInit {
     if (this.iswork) {
       if ( this.rq.days < 0 || this.rq.days > 260){
         window.alert('Please enter a number between 0(exclude) and 260');
+        this.rq.days = 0;
       }
       else{
       this.empService.work(this.rq, this.empId).subscribe(data => {
@@ -60,6 +61,7 @@ export class AddWorkdaysComponent implements OnInit {
 
       if ( this.rq.days < 0 || this.rq.days > this.vday){
         window.alert('Please enter a number between 0(exclude) and ' + this.vday + '. you do not have enough vacation days left');
+        this.rq.days = 0;
       }
       else {
       this.empService.takeVacation(this.rq, this.empId).subscribe(data => {
