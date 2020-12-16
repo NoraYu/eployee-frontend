@@ -21,12 +21,12 @@ export class EmpService {
 
     work(rq: RequestDay, id: number): Observable<Employee> {
     const url = `${apiUrl}/${id}/work`;
-    return this.http.post<Employee>(url, rq);
+    return this.http.put<Employee>(url, rq);
   }
 
   takeVacation(rq: RequestDay, id: number): Observable<Employee>  {
     const url = `${apiUrl}/${id}/vacation`;
-    return this.http.post<Employee>(url, rq);
+    return this.http.put<Employee>(url, rq);
   }
   getVday(id: number): Observable<number>{
     return  this.http.get<number>(`${apiUrl}/${id}/vday`); }
